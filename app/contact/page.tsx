@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     keywords: ["JavaScript", "Next.js", "HTML5", "CSS3", "React.js", "blogs", "lifestyle", "Typescript"],
     authors: {
       name: "Awonke Mnotoza",
-      url: "link.com"
+      url: "https://dev.contawo.com/"
     },
     creator: "Awonke Mnotoza",
     publisher: "Awonke Mnotoza",

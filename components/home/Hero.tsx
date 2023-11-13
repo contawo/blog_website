@@ -35,7 +35,7 @@ export default function Hero() {
                 <section className={styles.heroProfileInfo}>
                     <h3 className={styles.heroProfileInfoText}>Awonke Mnotoza</h3>
                     <a 
-                        href=""
+                        href="https://dev.contawo.com/"
                         target="_blank"
                         className={styles.heroProfileInfoLink}
                     >Visit my portfolio website</a>
