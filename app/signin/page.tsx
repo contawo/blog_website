@@ -23,7 +23,16 @@ export const metadata: Metadata = {
     },
     openGraph: {
       title: "Contawo Blogs",
-      description: "Contawo is blog website that is your one stop shop for increasing your programming skills with the best practices."
+      description: "Contawo is blog website that is your one stop shop for increasing your programming skills with the best practices.",
+      url: `https://contawo.com/signin`,
+      siteName: 'Contawo',
+      images: [
+          {
+              url: `https://ibb.co/k20ww4f`
+          }
+      ],
+      locale: 'en_US',
+      type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
@@ -35,7 +44,21 @@ export const metadata: Metadata = {
 }
 
 export default function Signin() {
-    return (
-        <SigninMain />
-    )
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: "Contawo | SignIn",
+    image: "https://ibb.co/k20ww4f",
+    description: 'Sign In to Contawo - Your Gateway to a World of Discovery, Inspiration, and Connection with Like-minded Thinkers. Explore Thought-Provoking Ideas, Engage in Meaningful Discussions, and Unlock the Power of Curiosity.',
+  }
+
+  return (
+    <>
+      <SigninMain />
+      <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+    </>
+  )
 }

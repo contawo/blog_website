@@ -11,6 +11,7 @@ import ReactPlayer from 'react-player/lazy'
 import Editor from '@monaco-editor/react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { irBlack } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import { FaCircle } from "react-icons/fa";
 
 const HeadingOne = ({children} : {children: any}) => {
     return (
@@ -115,7 +116,7 @@ const UnList = ({children} : {children: any}) => {
             {children.content.map((content: any, index: number) => {
                 return (
                     <div key={index} className={styles.unListItem}>
-                        <FaDotCircle className={styles.unListItemIcon} />
+                        <FaCircle className={styles.unListItemIcon} />
                         <p>{content.content[0].content[0].value}</p>
                     </div>
                 )

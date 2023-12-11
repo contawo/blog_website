@@ -27,7 +27,16 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Contawo Blogs",
-    description: "Contawo is blog website that is your one stop shop for increasing your programming skills with the best practices."
+    description: "Contawo is blog website that is your one stop shop for increasing your programming skills with the best practices.",
+    url: `https://contawo.com`,
+    siteName: 'Contawo',
+    images: [
+        {
+            url: `https://ibb.co/k20ww4f`
+        }
+    ],
+    locale: 'en_US',
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
@@ -43,6 +52,14 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: "Contawo",
+    image: "https://ibb.co/k20ww4f",
+    description: 'Contawo is a go-to destination for anyone who is interested in programming. Contawo is designed to cater to beginners, intermediate and advanced learners. Contawo also features a vibrant community of programmers who engage in discussions, share ideas, and collaborate on projects. Whether you are looking to learn a new programming language, sharpen your skills, or explore new programming concepts, we have something for everyone.',
+  }
+
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -50,6 +67,10 @@ export default function RootLayout({
           {children}
         </LayoutMain>
       </body>
+      <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </html>
   )
 }

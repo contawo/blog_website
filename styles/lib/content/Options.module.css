@@ -88,7 +88,7 @@
 
 /* Quote Styles */
 .quote {
-    padding: 2rem;
+    padding: 1rem;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -109,7 +109,7 @@
 
 .quoteIcon {
     font-size: 1rem;
-    color: var(--tertiary-color);
+    color: var(--text-color);
 }
 
 .quoteClose {
@@ -120,7 +120,7 @@
 
 @media screen and (max-width: 480px) {
     .quote {
-        padding: 1.3rem 1.8rem;
+        padding: 1rem;
     }
 }
 
@@ -147,8 +147,8 @@
 }
 
 .unListItemIcon {
-    font-size: .7rem;
-    color: var(--primary-color);
+    font-size: .5rem;
+    color: var(--text-color);
     margin-top: .3rem;
 }
 

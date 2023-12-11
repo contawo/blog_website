@@ -1,17 +1,16 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import {getAuth} from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAjbjxKVuEByFkdtky3-4-LdSwHNFxhaSg",
-    authDomain: "contawo-10ed2.firebaseapp.com",
-    projectId: "contawo-10ed2",
-    storageBucket: "contawo-10ed2.appspot.com",
-    messagingSenderId: "387975074631",
-    appId: "1:387975074631:web:627cdd97908267e21ff262",
-    measurementId: "G-Q2Z2CFHHD4"
-  };
+    apiKey: process.env.NEXT_PUBLIC_apiKey,
+    authDomain: process.env.NEXT_PUBLIC_authDomain,
+    projectId: process.env.NEXT_PUBLIC_projectId,
+    storageBucket: process.env.NEXT_PUBLIC_storageBucket,
+    messagingSenderId: process.env.NEXT_PUBLIC_messagingSenderId,
+    appId: process.env.NEXT_PUBLIC_appId,
+    measurementId: process.env.NEXT_PUBLIC_measurementId
+};
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);

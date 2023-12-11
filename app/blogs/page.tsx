@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     keywords: ["JavaScript", "Next.js", "HTML5", "CSS3", "React.js", "blogs", "lifestyle", "Typescript"],
     authors: {
       name: "Awonke Mnotoza",
-      url: "link.com"
+      url: "https://code.contawo.com/"
     },
     creator: "Awonke Mnotoza",
     publisher: "Awonke Mnotoza",
@@ -27,7 +27,16 @@ export const metadata: Metadata = {
     },
     openGraph: {
       title: "Contawo Blogs",
-      description: "Contawo is blog website that is your one stop shop for increasing your programming skills with the best practices."
+      description: "Contawo is blog website that is your one stop shop for increasing your programming skills with the best practices.",
+      url: `https://contawo.com/blogs`,
+      siteName: 'Contawo',
+      images: [
+          {
+              url: `https://ibb.co/k20ww4f`
+          }
+      ],
+      locale: 'en_US',
+      type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
@@ -46,12 +55,24 @@ const fetchBlogs = async () => {
 export default async function Blogs() {
     const blogPosts = await fetchBlogs();
 
+    const jsonLd = {
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: "Contawo | Blogs",
+      image: "https://ibb.co/k20ww4f",
+      description: 'Welcome to the Contawo Blog - Where Curiosity and a Dash of Humor Collide! Dive into Engaging Articles, Expert Insights, and Captivating Stories on Technology, Development, Projects, Lifestyle, and More. Join our Friendly Community of Thinkers and Embark on a Journey of Intellectual Exploration. No Boring Stuff Allowed - Prepare to Laugh, Learn, and Unleash Your Inner Curiosity!',
+    }
+
     return (
         <main>
             <Header />
             <PageTitle title="The articles" />
             <Banner />
             <BlogList posts={blogPosts} />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
         </main>
     )
 }

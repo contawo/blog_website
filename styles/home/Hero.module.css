@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
+    margin: 3rem 0;
 }
 
 .heroTitles {
@@ -11,7 +12,7 @@
 }
 
 .heroTitle {
-    line-height: 110%;
+    line-height: 105%;
 }
 
 .heroTitle > b {
@@ -34,7 +35,7 @@
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
 }
 
 .heroButtonsLink {
@@ -97,7 +98,13 @@
 }
 
 @media screen and (max-width: 480px) {
+    .hero {
+        margin: 1.5rem 0;
+    }
     .heroTitles {
         font-size: 2.5rem;
+    }
+    .heroButtons {
+        margin-bottom: 1.5rem;
     }
 }
